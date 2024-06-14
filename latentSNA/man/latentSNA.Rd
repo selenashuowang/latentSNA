@@ -34,16 +34,16 @@ prior=list())
 \item{THETAPM}{posterior samples of the latent person variable}
 \item{APM}{posterior mean of connectivity intercepts} \item{BPM}{posterior
 mean of attribute intercepts} \item{U}{last iteration of latent connectivity for all regions
-}
+} 
 \item{UPM}{posterior mean of U}
 \item{UVPM.l}{list of posterior mean of connectivity}
 \item{Theta}{the last iteration of the Theta estimate}
 \item{X}{observed X}
 \item{Y}{observed Y}
 \item{EFlPM}{posterior mean estimates of X}
-\item{ETPM}{posterior mean estiamtes of Y}
+ \item{ETPM}{posterior mean estiamtes of Y}
 \item{TMPM}{posterior mean estimates of latent behavior component}
-\item{FLPM}{posterior mean estiamtes of latent connectivity component}
+ \item{FLPM}{posterior mean estiamtes of latent connectivity component}
 \item{input}{input values}
 }
 \description{
