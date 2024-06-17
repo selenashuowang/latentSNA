@@ -73,7 +73,7 @@ The main functionality of the LatentSNA Toolkit is encapsulated in the `latentSN
 ### Run LatentSNA model
 
 ```{r setup1}
-devtools::install_github("selenashuowang/latentSNA", force = TRUE)
+library(latentSNA)
 
 setwd("/Users/selena/Desktop/github/LatentSNA/data")
 

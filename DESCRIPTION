@@ -10,7 +10,8 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 4.3.2),
-    MASS
+    MASS,
+    base
 Imports:
     dplyr,
     plyr
