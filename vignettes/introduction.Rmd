@@ -1,11 +1,19 @@
 ---
-title: "LatnetSNA for Brain-behavior Linking"
+title: "LatentSNA for Brain-behavior Linking"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  
+  
 ---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -20,7 +28,38 @@ The LatentSNA model is specifically designed for identifying imaging biomarkers 
 
 
 
+## Installation
+
+This toolkit is implemented in R. Follow these steps for setup:
+
+
+1. Clone or download the repository to your local machine.
+2. Open R and navigate to the directory containing the toolkit.
+3. Run the main.R script.
+
 
 ```{r setup}
 devtools::install_github("selenashuowang/latentSNA")
 ```
+
+
+
+## Required Data
+
+
+The toolkit is designed to analyze data consisting of brain connectivity and individual outcomes. Specifically, it requires two key files:
+
+* `X`: a list of $V \times V$ brain connectivity data.
+* `Y`: a matrix of $N \times P$ individual outcome data.
+
+Additionally, simulated example data is available in the directory `data/X.RData` and `data/Y.RData` for demonstration purposes.
+
+
+## Key parameters
+
+* `W` a matrix of $N \times Q$ covariates for the connectivity data.
+* `H` a matrix of $N \times Q1$ covariates for the attribute data.
+* `nscan` number of iterations of the Markov chain (beyond burn-in)
+* `burn` burn in for the Markov chain
+
+Note that

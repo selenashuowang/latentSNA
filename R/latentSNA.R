@@ -8,19 +8,19 @@
 #' 10000, burn = 500, odens = 25,
 #' prior=list())
 #' @param X a list of V x V brain connectivity data.
-#' @param Y a list of V x P attribute data.
+#' @param Y a matrix of N x P individual outcome data.
 #' @param W a matrix of N x Q covariates for the connectivity data.
 #' @param H a matrix of N x Q1 covariates for the attribute data.
 #' @param seed random seed
 #' @param nscan number of iterations of the Markov chain (beyond burn-in)
 #' @param burn burn in for the Markov chain
-#' @param odens output density for the Markov chain
+#' @param odens output density for the Markov chain, chain thinning every odens iterations
 #' @param prior list: A list of hyperparameters for the prior distribution
 #' @return
 #' \item{COV}{posterior mean of the covariance parameters between brain and behaviors}
 #' \item{BETAPM}{posterior mean of the regression coefficient parameters for the connectivity data}
 #' \item{GAMMAPM}{posterior mean of the regression coefficient parameters for the attribute data}
-#' \item{THETAPM}{posterior samples of the latent person variable}
+#' \item{THETAPM}{posterior mean of the latent person variable}
 #' \item{APM}{posterior mean of connectivity intercepts} \item{BPM}{posterior
 #' mean of attribute intercepts} \item{U}{last iteration of latent connectivity for all regions
 #' } 
