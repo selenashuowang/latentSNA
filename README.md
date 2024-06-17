@@ -1,18 +1,4 @@
----
-title: "LatentSNA"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{LatentSNA}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
+### LatentSNA tutorial
 ## Overview
 
 
