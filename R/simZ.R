@@ -3,7 +3,7 @@
 #' Simulate Z given its expectation and covariance
 #' 
 #' 
-#' @usage simZ(EZ, rho, s2 = 1)
+#' @usage simZ(EZ,s2=1)
 #' @param EZ expected value of Z
 #' @param s2 dyadic variance
 #' @return a simulated value of Z

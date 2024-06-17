@@ -4,7 +4,7 @@
 \alias{rH_bin}
 \title{Simulate H}
 \usage{
-rH_bin(H, EH, Y)
+rH_bin(H,EH,Y,s1=1)
 }
 \arguments{
 \item{H}{a n X m matrix, the current value of H}

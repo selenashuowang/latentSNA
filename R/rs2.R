@@ -3,7 +3,7 @@
 #' Gibbs update for connectivity variance
 #' 
 #' 
-#' @usage rs2(Fl, offset=0,nu2=NULL,s20=NULL)
+#' @usage rs2(Fl,offset = offset, nu2=NULL,s20=NULL)
 #' @param Fl a list of V X V normal connectivity matrix
 #' @param nu2 prior degrees of freedom 
 #' @param s20 prior estimate of s2

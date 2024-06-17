@@ -3,7 +3,7 @@
 #' Gibbs update for behavior variance
 #' 
 #' 
-#' @usage rs1(Tm, offset=0,nu1=NULL,s10=NULL)
+#' @usage rs1_b(Tm, offset=0,nu1=NULL,s10=NULL)
 #' @param Tm a list of V X P normal behavior matrix
 #' @param nu1 prior degrees of freedom 
 #' @param s10 prior estimate of s1

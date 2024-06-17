@@ -4,7 +4,7 @@
 \alias{rTheta_b}
 \title{Gibbs sampling of Theta}
 \usage{
-rTheta(H, beta, Alpha, Theta ,U, Stheta, Sutheta, Su, s1)
+rTheta_b(H, beta, Alpha, Theta ,U, Stheta, Sutheta, Su, s1)
 }
 \arguments{
 \item{H}{N X P normal behavior matrix}

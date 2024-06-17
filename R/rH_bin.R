@@ -4,7 +4,7 @@
 #' and a behavior matrix Y
 #' 
 #' 
-#' @usage rH_bin(H, EH, Y)
+#' @usage rH_bin(H,EH,Y,s1=1)
 #' @param H a n X m matrix, the current value of H
 #' @param EH expected value of H
 #' @param Y n X m binary item response matrix

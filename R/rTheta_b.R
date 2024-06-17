@@ -2,7 +2,7 @@
 #'
 #' A Gibbs sampler for updating the Person latent effect Theta.
 #'
-#' @usage rTheta(H, beta, Alpha, Theta ,U, Stheta, Sutheta, Su, s1)
+#' @usage rTheta_b(H, beta, Alpha, Theta ,U, Stheta, Sutheta, Su, s1)
 #' @param H N X P normal behavior matrix
 #' @param beta P X 1 behavior intercept vector
 #' @param Alpha 1 X 1 intercept vector

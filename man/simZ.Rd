@@ -4,7 +4,7 @@
 \alias{simZ}
 \title{Simulate Z given its expectation and covariance}
 \usage{
-simZ(EZ, rho, s2 = 1)
+simZ(EZ,s2=1)
 }
 \arguments{
 \item{EZ}{expected value of Z}

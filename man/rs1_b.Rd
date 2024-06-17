@@ -4,7 +4,7 @@
 \alias{rs1_b}
 \title{Gibbs update for behavior variance}
 \usage{
-rs1(Tm, offset=0,nu1=NULL,s10=NULL)
+rs1_b(Tm, offset=0,nu1=NULL,s10=NULL)
 }
 \arguments{
 \item{Tm}{a list of V X P normal behavior matrix}

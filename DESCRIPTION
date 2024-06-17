@@ -1,20 +1,20 @@
-Package: latentSNA
+Package: LatentSNA
 Type: Package
-Title: LatentSNA
+Title: Implement network science in a generative statistical process for brain-behavior linking
 Version: 0.1.0
 Author: Selena Wang
 Maintainer: Selena Wang <selewang@iu.edu>
-Description: Neuroimaging connectivity analysis needs network science for brain-behavior linking (Wang et al. (2023) < arXiv:2309.11349>).
+Description: Neuroimaging connectivity analysis needs network science for brain-behavior linking (< arXiv:2309.11349>).
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 4.3.2),
-    MASS,
-    base
 Imports:
-    dplyr,
-    plyr
+    plyr,
+    coda,
+    stats,
+    MASS 	
 RoxygenNote: 7.3.1
 Suggests: 
     knitr,

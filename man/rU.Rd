@@ -4,7 +4,7 @@
 \alias{rU}
 \title{Gibbs sampling of U}
 \usage{
-rU(Fl,U,Theta, Stheta, Sutheta, Su, s2=1, offset=offset)
+rU(Fl,EFl, U,Theta, Stheta, Sutheta, Su,  s2)
 }
 \arguments{
 \item{Fl}{a list of V X V normal relational matrix}

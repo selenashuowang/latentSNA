@@ -2,7 +2,7 @@
 #'
 #' A Gibbs sampler for updating U.
 #'
-#' @usage rU(Fl,U,Theta, Stheta, Sutheta, Su, s2=1, offset=offset)
+#' @usage rU(Fl,EFl, U,Theta, Stheta, Sutheta, Su,  s2)
 #' @param Fl a list of V X V normal relational matrix
 #' @param EFl a list of the same dimension as Fl. It is assumed that
 #' Fl-offset follows a SRRM, so the offset should contain any multiplicative

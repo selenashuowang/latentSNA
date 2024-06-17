@@ -4,7 +4,7 @@
 \alias{rs2}
 \title{Gibbs update for connectivity variance}
 \usage{
-rs2(Fl, offset=0,nu2=NULL,s20=NULL)
+rs2(Fl,offset = offset, nu2=NULL,s20=NULL)
 }
 \arguments{
 \item{Fl}{a list of V X V normal connectivity matrix}

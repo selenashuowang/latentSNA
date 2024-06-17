@@ -4,7 +4,7 @@
 \alias{latentSNA}
 \title{Attribute informed brain connectivity}
 \usage{
-latnetSNA(X, Y, W, H, seed = 1, nscan =
+latentSNA(X, Y, W, H, seed = 1, nscan =
 10000, burn = 500, odens = 25,
 prior=list())
 }

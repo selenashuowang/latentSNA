@@ -4,7 +4,7 @@
 #'
 #'
 #'
-#' @usage latnetSNA(X, Y, W, H, seed = 1, nscan =
+#' @usage latentSNA(X, Y, W, H, seed = 1, nscan =
 #' 10000, burn = 500, odens = 25,
 #' prior=list())
 #' @param X a list of V x V brain connectivity data.
