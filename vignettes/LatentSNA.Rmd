@@ -1,19 +1,11 @@
 ---
-title: "LatentSNA for Brain-behavior Linking"
+title: "LatentSNA"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{LatentSNA}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-  
-  
 ---
-
-<style type="text/css">
-  body{
-  font-size: 12pt;
-}
-</style>
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -36,12 +28,6 @@ This toolkit is implemented in R. Follow these steps for setup:
 1. Clone or download the repository to your local machine.
 2. Open R and navigate to the directory containing the toolkit.
 3. Run the latentSNA model.
-
-
-```{r setup}
-devtools::install_github("selenashuowang/latentSNA", force = TRUE)
-
-```
 
 
 
@@ -72,7 +58,7 @@ The main functionality of the LatentSNA Toolkit is encapsulated in the `latentSN
 
 ### Run LatentSNA model
 
-```{r setup1}
+```{r s1, eval=FALSE}
 library(latentSNA)
 
 setwd("/Users/selena/Desktop/github/LatentSNA/data")
@@ -81,14 +67,14 @@ load(file='X.rda')
 load(file='Y.rda')
 
 
-
 model1=latentSNA(X, Y,W=NULL, H=NULL,
                    seed = 1, nscan = 10, burn = 1, odens = 1,
                    prior=list())
 
-
-
 ```
+
+
 ### Obtain unbiased estimates of covariance parameters.
 
 From the saved model results, we can obtain estimated $N \times V$ brain latent connectivity as `model1$UPM`, posterior samples of the covariance parameters can be obtained via `model1$COV`, etc. See details in the pacakge documentation. 
+
