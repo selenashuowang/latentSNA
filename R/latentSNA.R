@@ -44,10 +44,9 @@
 #' 
 #' ## More MCMC burn-in iterations and iterations are needed than specified here. 
 #' model1=latentSNA(X, Y,W=NULL, H=NULL,
-#' indices = NULL, indices_irt = NULL,
 #' seed = 1, nscan = 1, burn = 1, odens = 1,
-#' print = TRUE, gof=TRUE, plot=TRUE,
 #' prior=list())
+#' 
 
 
 
