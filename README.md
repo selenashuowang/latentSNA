@@ -1,4 +1,4 @@
-### LatentSNA tutorial
+# LatentSNA tutorial
 ## Overview
 
 
