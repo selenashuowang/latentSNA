@@ -60,6 +60,26 @@ Additionally, simulated example data is available in the directory `data/X.RData
 * `W` a matrix of $N \times Q$ covariates for the connectivity data.
 * `H` a matrix of $N \times Q1$ covariates for the attribute data.
 * `nscan` number of iterations of the Markov chain (beyond burn-in)
-* `burn` burn in for the Markov chain
+* `burn` burn-in for the Markov chain
 
-Note that
+Note that sufficient burn-in is need to reach optimal covariance parameter estimates. See details in the method paper. 
+
+## Usage
+
+
+The main functionality of the LatentSNA Toolkit is encapsulated in the `main.r` script. Example data are in the `data` folder. The `main.r` can do the following visualization and connectivity data analysis:
+
+### Run LatentSNA model
+
+```{r setup1}
+devtools::install_github("selenashuowang/latentSNA")
+
+model1=latentSNA(X, Y,W=NULL, H=NULL,
+                   indices = NULL, indices_irt = NULL,
+                   seed = 1, nscan = 1, burn = 1, odens = 1,
+                   print = TRUE, gof=TRUE, plot=TRUE,
+                   prior=list())
+
+```
+
+

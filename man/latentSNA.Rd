@@ -11,7 +11,7 @@ prior=list())
 \arguments{
 \item{X}{a list of V x V brain connectivity data.}
 
-\item{Y}{a list of V x P attribute data.}
+\item{Y}{a matrix of N x P individual outcome data.}
 
 \item{W}{a matrix of N x Q covariates for the connectivity data.}
 
@@ -23,7 +23,7 @@ prior=list())
 
 \item{burn}{burn in for the Markov chain}
 
-\item{odens}{output density for the Markov chain}
+\item{odens}{output density for the Markov chain, chain thinning every odens iterations}
 
 \item{prior}{list: A list of hyperparameters for the prior distribution}
 }
@@ -31,7 +31,7 @@ prior=list())
 \item{COV}{posterior mean of the covariance parameters between brain and behaviors}
 \item{BETAPM}{posterior mean of the regression coefficient parameters for the connectivity data}
 \item{GAMMAPM}{posterior mean of the regression coefficient parameters for the attribute data}
-\item{THETAPM}{posterior samples of the latent person variable}
+\item{THETAPM}{posterior mean of the latent person variable}
 \item{APM}{posterior mean of connectivity intercepts} \item{BPM}{posterior
 mean of attribute intercepts} \item{U}{last iteration of latent connectivity for all regions
 } 
@@ -48,6 +48,17 @@ mean of attribute intercepts} \item{U}{last iteration of latent connectivity for
 }
 \description{
 An MCMC algorithm for fitting the latentSNA model
+}
+\examples{
+attach(X)
+attach(Y)
+
+## More MCMC burn-in iterations and iterations are needed than specified here. 
+model1=latentSNA(X, Y,W=NULL, H=NULL,
+indices = NULL, indices_irt = NULL,
+seed = 1, nscan = 1, burn = 1, odens = 1,
+print = TRUE, gof=TRUE, plot=TRUE,
+prior=list())
 }
 \author{
 Selena Wang
