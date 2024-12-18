@@ -290,10 +290,9 @@ result$model$THETAPM |> dim()
     ## [1] 1000    1
 
 1.  COV matrix (15000 × 20): Provides covariance estimates between each
-    brain region and behavior across 20000 MCMC iterations
+    brain region and behavior across 15000 MCMC iterations
 2.  THETAPM (1000 × 1): Contains latent variable estimates for 1000
-    subject across iterations. When there are no covariates and
-    intercept is set to 0, these estimates directly correspond to
+    subject across iterations. When there are no covariates, these estimates directly correspond to
     predicted behavioral outcomes.
 
 While the model produces other variables, we focus on these two key
