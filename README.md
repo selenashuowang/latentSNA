@@ -125,7 +125,7 @@ connectivity patterns and behavioral outcomes. We set up:
 
 - A sample of 1000 subjects
 - 20 brain regions
-- 5 significant brain regions with strong correlations (0.9)
+- 8 significant brain regions with strong correlations (0.9)
 - A single behavioral outcome
 - One-dimensional latent space
 
@@ -171,7 +171,7 @@ Su = matrix(S[1:V,1:V], nrow=V, ncol=V)
 Stheta = matrix(S[(V+1):(V+D),(V+1):(V+D) ], nrow=D, ncol=D)
 Sutheta =matrix(S[(V+1):(V+D),1:V], nrow = D, ncol = V)
 
-# Print Sutheta to show that brain regions 1-5 are significantly associated with behavior (correlation = 0.9)
+# Print Sutheta to show that brain regions 1-8 are significantly associated with behavior (correlation = 0.9)
 print(Sutheta)
 ```
 
@@ -236,7 +236,7 @@ results and saved them for analysis. The process includes:
     - Creating test and training sets (10% test, 90% training)
     - Storing the full dataset for later comparison
 2.  Model Specification:
-    - MCMC parameters: 20,000 iterations with 15,000 burn-in
+    - MCMC parameters: 15,000 iterations with 15,000 burn-in
     - Random seed set to 1 for reproducibility
     - No additional covariates (W=NULL, H=NULL)
 
@@ -264,7 +264,7 @@ X.array=simplify2array(X)
 
 #This model fitting process could take several hours
 model1=latentSNA(X, Y,W=NULL, H=NULL,
-                 seed = 1, nscan = 20000, burn = 15000, odens = 1,
+                 seed = 1, nscan = 15000, burn = 15000, odens = 1,
                  prior=list())
 
 res=list("model"=model1,"X_full"=X_full,"Y_full"=Y_full,"sampled.id"=sampled.id)
@@ -289,9 +289,9 @@ result$model$THETAPM |> dim()
 
     ## [1] 1000    1
 
-1.  COV matrix (20000 × 20): Provides covariance estimates between each
+1.  COV matrix (15000 × 20): Provides covariance estimates between each
     brain region and behavior across 20000 MCMC iterations
-2.  THETA (20000 × 1000): Contains latent variable estimates for each
+2.  THETAPM (1000 × 1): Contains latent variable estimates for 1000
     subject across iterations. When there are no covariates and
     intercept is set to 0, these estimates directly correspond to
     predicted behavioral outcomes.
@@ -349,7 +349,7 @@ ggplot(comparison_df, aes(x = Region)) +
 ![](example_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> The plot
 shows:
 
-- Red line: True correlations (0.9 for regions 1-5, 0 for others)
+- Red line: True correlations (0.9 for regions 1-8, 0 for others)
 - Blue line: Estimated correlations from the model
 - We can see how well the model recovered the true brain-behavior
   associations
