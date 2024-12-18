@@ -354,7 +354,7 @@ shows:
   associations
 
 As shown in the plot, the estimated correlations (blue line) closely
-match the true correlations (red line), with high values for regions 1-5
+match the true correlations (red line), with high values for regions 1-8
 and near-zero values for the remaining regions. This demonstrates that
 our latentSNA model can efficiently identify the significant brain
 regions that are truly associated with behavior.
@@ -475,3 +475,4 @@ Comparing the prediction performance between LatentSNA and CPM, our
 model achieves a higher correlation with the actual behavioral values
 than CPM, indicating that LatentSNA can provide more accurate
 predictions of behavior from brain connectivity patterns.
+Test update
