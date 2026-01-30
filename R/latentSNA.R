@@ -292,14 +292,20 @@ latentSNA<- function(X, Y,W, H,
     gamma <- NULL
 
 
-    tmp <- try(rSu(data.matrix(cbind(t(U[,1,]),Theta)), Su0=prior$Sutheta0,etau=prior$etautheta), TRUE)
+    tmp = try(
+      rSu(data.matrix(cbind(t(U[,1,]), Theta)),
+          Su0 = prior$Sutheta0,
+          etau = prior$etautheta),
+      silent = TRUE
+    )
     
-    if(is.list(tmp)){
-      Su = matrix(tmp$Su[1:V,1:V], nrow=V, ncol=V)
-      Stheta = matrix(tmp$Su[(V+1):(V+D),(V+1):(V+D) ], nrow=D, ncol=D)
-      Sutheta =matrix(tmp$Su[(V+1):(V+D),1:V ], nrow = D, ncol = V)
-      S=tmp$Su
-    }
+    if (!is.list(tmp)) stop("latentSNA(): rSu() failed, so Stheta/Su/Sutheta were not created. Please check your input data, make sure it is in the right format.", as.character(tmp))
+    
+    Su = matrix(tmp$Su[1:V, 1:V], nrow = V, ncol = V)
+    Stheta = matrix(tmp$Su[(V+1):(V+D), (V+1):(V+D)], nrow = D, ncol = D)
+    Sutheta = matrix(tmp$Su[(V+1):(V+D), 1:V], nrow = D, ncol = V)
+    S = tmp$Su
+    
     
     
 
