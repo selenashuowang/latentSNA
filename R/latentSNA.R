@@ -137,8 +137,19 @@ latentSNA<- function(X, Y,W, H,
 
 
 
-  if(is.null(prior$Sutheta0)){ prior$Sutheta0<-cor(cbind(t(U[,1,]),Theta)) }
+  if(is.null(prior$Sutheta0)){ prior$Sutheta0 = cor(cbind(t(U[, 1, ]), Theta), use = "pairwise.complete.obs")
+ }
   if(is.null(prior$etautheta)){ prior$etautheta<-(D+V+2) }
+  
+  # ---- Ensure Su / Stheta / Sutheta are defined even if rSu() fails ----
+  S_init = prior$Sutheta0
+  S_init[!is.finite(S_init)] = 0
+  diag(S_init) = 1
+  
+  Su     = matrix(S_init[1:V, 1:V], nrow=V, ncol=V)
+  Stheta = matrix(S_init[(V+1):(V+D), (V+1):(V+D)], nrow=D, ncol=D)
+  Sutheta= matrix(S_init[(V+1):(V+D), 1:V], nrow=D, ncol=V)
+  
 
   # output items
 
@@ -292,19 +303,15 @@ latentSNA<- function(X, Y,W, H,
     gamma <- NULL
 
 
-    tmp = try(
-      rSu(data.matrix(cbind(t(U[,1,]), Theta)),
-          Su0 = prior$Sutheta0,
-          etau = prior$etautheta),
-      silent = TRUE
-    )
+    tmp <- try(rSu(data.matrix(cbind(t(U[,1,]),Theta)), Su0=prior$Sutheta0,etau=prior$etautheta), TRUE)
     
-    if (!is.list(tmp)) stop("latentSNA(): rSu() failed, so Stheta/Su/Sutheta were not created. Please check your input data, make sure it is in the right format.", as.character(tmp))
     
-    Su = matrix(tmp$Su[1:V, 1:V], nrow = V, ncol = V)
-    Stheta = matrix(tmp$Su[(V+1):(V+D), (V+1):(V+D)], nrow = D, ncol = D)
-    Sutheta = matrix(tmp$Su[(V+1):(V+D), 1:V], nrow = D, ncol = V)
-    S = tmp$Su
+    if(is.list(tmp)){
+      Su = matrix(tmp$Su[1:V,1:V], nrow=V, ncol=V)
+      Stheta = matrix(tmp$Su[(V+1):(V+D),(V+1):(V+D) ], nrow=D, ncol=D)
+      Sutheta =matrix(tmp$Su[(V+1):(V+D),1:V ], nrow = D, ncol = V)
+      S=tmp$Su
+    }
     
     
     
