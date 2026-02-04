@@ -137,18 +137,24 @@ latentSNA<- function(X, Y,W, H,
 
 
 
-  if(is.null(prior$Sutheta0)){ prior$Sutheta0 = cor(cbind(t(U[, 1, ]), Theta), use = "pairwise.complete.obs")
- }
-  if(is.null(prior$etautheta)){ prior$etautheta<-(D+V+2) }
+  p = V + D
   
-  # ---- Ensure Su / Stheta / Sutheta are defined even if rSu() fails ----
-  S_init = prior$Sutheta0
-  S_init[!is.finite(S_init)] = 0
-  diag(S_init) = 1
+  if(is.null(prior$Sutheta0)){
+    # If p >= N, sample correlation from N rows is singular by construction
+    if(nrow(Y) <= p){
+      prior$Sutheta0 = diag(p)
+    } else {
+      prior$Sutheta0 = cor(cbind(t(U[, 1, ]), Theta), use = "pairwise.complete.obs")
+      prior$Sutheta0[!is.finite(prior$Sutheta0)] = 0
+      prior$Sutheta0 = (prior$Sutheta0 + t(prior$Sutheta0)) / 2
+      diag(prior$Sutheta0) = 1
+    }
+  }
   
-  Su     = matrix(S_init[1:V, 1:V], nrow=V, ncol=V)
-  Stheta = matrix(S_init[(V+1):(V+D), (V+1):(V+D)], nrow=D, ncol=D)
-  Sutheta= matrix(S_init[(V+1):(V+D), 1:V], nrow=D, ncol=V)
+  if(is.null(prior$etautheta)){
+    prior$etautheta = p + 2
+  }
+  
   
 
   # output items
