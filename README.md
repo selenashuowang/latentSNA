@@ -54,7 +54,7 @@ load(file='Y.rda')
 
 
 model1=latentSNA(X, Y,W=NULL, H=NULL,
-                   seed = 1, nscan = 10, burn = 1, odens = 1,
+                   seed = 1, nscan = 15000, burn = 15000, odens = 10,
                    prior=list())
 
 ```
