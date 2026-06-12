@@ -2,7 +2,9 @@
 ## Overview
 
 
-The LatentSNA model is specifically designed for identifying imaging biomarkers using brain connectivity data. It offers robust tools for unbiased estimation of imaging biomarkers' influence on behavior variants, quantification of the uncertainty and evaluation of the likelihood of the estimated biomarker effects against chance, brain-behavior prediction in novel samples for both connectivity and behaviors.
+The LatentSNA model is specifically designed for identifying imaging biomarkers using brain connectivity data. It offers robust tools for unbiased estimation of imaging biomarkers' influence on behavior variants, quantification of the uncertainty and evaluation of the likelihood of the estimated biomarker effects against chance, brain-behavior prediction in novel samples for both connectivity and behaviors. See tutorial here.
+
+
 
 
 
