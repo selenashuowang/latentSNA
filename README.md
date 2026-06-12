@@ -47,10 +47,7 @@ The main functionality of the LatentSNA Toolkit is encapsulated in the `latentSN
 ```{r s1, eval=FALSE}
 library(latentSNA)
 
-setwd("/Users/selena/Desktop/github/LatentSNA/data")
 
-load(file='X.rda')
-load(file='Y.rda')
 
 
 model1=latentSNA(X, Y,W=NULL, H=NULL,
